@@ -99,7 +99,7 @@
 :root[data-theme="sao"] #newagent input, :root[data-theme="sao"] #newagent textarea { border-radius: 3px; }
 /* 干活后端对话框、新手教程扫描卡：同一套 ○ 确认 / × 取消 */
 :root[data-theme="sao"] #kbackend .kb-box { border-radius: 4px; }
-:root[data-theme="sao"] :is(#kbackend .btns button, .scan .sc-act button) { border-radius: 99px; display: inline-flex; align-items: center; gap: 6px; background: #fff; color: var(--text); box-shadow: 0 0 0 1px var(--line-strong); }
+:root[data-theme="sao"] :is(#kbackend .btns button, .scan .sc-act button):not([hidden]) { border-radius: 99px; display: inline-flex; align-items: center; gap: 6px; background: #fff; color: var(--text); box-shadow: 0 0 0 1px var(--line-strong); }
 :root[data-theme="sao"] :is(#kbackend .btns .primary, .scan .sc-act .sc-go)::before { content: ""; width: 11px; height: 11px; border: 2.5px solid var(--confirm); border-radius: 50%; }
 :root[data-theme="sao"] :is(#kbackend .kb-deny, .scan .sc-skip)::before { content: "×"; font-size: 18px; line-height: 1; font-weight: 700; color: var(--err); }
 :root[data-theme="sao"] .scan .sc-chips button { border-radius: 99px; }

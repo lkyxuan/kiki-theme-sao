@@ -44,16 +44,16 @@
 :root[data-theme="sao"] .kiki .ava { box-shadow: 0 0 0 3px #fff, 0 2px 10px rgba(40, 50, 70, .2); }
 :root[data-theme="sao"] .kiki.on { background: rgba(255, 255, 255, .85); }
 :root[data-theme="sao"] .kiki.on .ava { box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--accent), 0 4px 14px rgba(242, 155, 29, .35); }
-/* 宝的头像：白色圆按钮里放小机器人，选中时整圈变橙 */
-:root[data-theme="sao"] aside .bao-head .avatar { box-shadow: 0 0 0 3px #fff, 0 2px 6px rgba(40, 50, 70, .18); }
-:root[data-theme="sao"] aside .bao-head.on .avatar { box-shadow: 0 0 0 3px var(--accent), 0 2px 10px rgba(242, 155, 29, .45); }
+/* 成员的头像：白色圆按钮里放小机器人，选中时整圈变橙 */
+:root[data-theme="sao"] aside .agent-head .avatar { box-shadow: 0 0 0 3px #fff, 0 2px 6px rgba(40, 50, 70, .18); }
+:root[data-theme="sao"] aside .agent-head.on .avatar { box-shadow: 0 0 0 3px var(--accent), 0 2px 10px rgba(242, 155, 29, .45); }
 /* 选中条：浅色列表里选中的一行整条变橙、字变白 */
-:root[data-theme="sao"] .item, :root[data-theme="sao"] .bao-head[data-bao] { border-radius: 3px; }
-:root[data-theme="sao"] .bao-head.on { background: rgba(255, 255, 255, .8); box-shadow: var(--shadow-sm); }
+:root[data-theme="sao"] .item, :root[data-theme="sao"] .agent-head[data-agent] { border-radius: 3px; }
+:root[data-theme="sao"] .agent-head.on { background: rgba(255, 255, 255, .8); box-shadow: var(--shadow-sm); }
 :root[data-theme="sao"] .item.on { background: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(242, 155, 29, .35); }
 :root[data-theme="sao"] .item.on .more { color: #fff; }
-:root[data-theme="sao"] .item:not(.on):hover, :root[data-theme="sao"] .bao-head[data-bao]:not(.on):hover { background: rgba(255, 255, 255, .7); }
-:root[data-theme="sao"] .bao-head button { border-radius: 50%; }
+:root[data-theme="sao"] .item:not(.on):hover, :root[data-theme="sao"] .agent-head[data-agent]:not(.on):hover { background: rgba(255, 255, 255, .7); }
+:root[data-theme="sao"] .agent-head button { border-radius: 50%; }
 :root[data-theme="sao"] .tag { border-radius: 2px; background: var(--accent-soft); color: #c27400; }
 :root[data-theme="sao"] .dot { background: var(--accent); }
 /* 正在跑：小转圈换成一截斜切的血条，绿光来回走 */
@@ -91,12 +91,20 @@
 :root[data-theme="sao"] #peek { background: var(--bg); }
 
 /* ---------- 弹窗：○ 确认、× 取消 ---------- */
-:root[data-theme="sao"] #sheet .win, :root[data-theme="sao"] #board .win, :root[data-theme="sao"] #newbao form, :root[data-theme="sao"] #ctx { border-radius: 4px; }
-:root[data-theme="sao"] #newbao .btns button { border-radius: 99px; display: inline-flex; align-items: center; gap: 6px; background: #fff; color: var(--text); box-shadow: 0 0 0 1px var(--line-strong); }
-:root[data-theme="sao"] #newbao .btns .primary { background: #fff; color: var(--text); }
-:root[data-theme="sao"] #newbao .btns .primary::before { content: ""; width: 11px; height: 11px; border: 2.5px solid var(--confirm); border-radius: 50%; }
-:root[data-theme="sao"] #newbao .btns .cancel::before { content: "×"; font-size: 18px; line-height: 1; font-weight: 700; color: var(--err); }
-:root[data-theme="sao"] #newbao input, :root[data-theme="sao"] #newbao textarea { border-radius: 3px; }
+:root[data-theme="sao"] #sheet .win, :root[data-theme="sao"] #board .win, :root[data-theme="sao"] #newagent form, :root[data-theme="sao"] #ctx { border-radius: 4px; }
+:root[data-theme="sao"] #newagent .btns button { border-radius: 99px; display: inline-flex; align-items: center; gap: 6px; background: #fff; color: var(--text); box-shadow: 0 0 0 1px var(--line-strong); }
+:root[data-theme="sao"] #newagent .btns .primary { background: #fff; color: var(--text); }
+:root[data-theme="sao"] #newagent .btns .primary::before { content: ""; width: 11px; height: 11px; border: 2.5px solid var(--confirm); border-radius: 50%; }
+:root[data-theme="sao"] #newagent .btns .cancel::before { content: "×"; font-size: 18px; line-height: 1; font-weight: 700; color: var(--err); }
+:root[data-theme="sao"] #newagent input, :root[data-theme="sao"] #newagent textarea { border-radius: 3px; }
+/* 干活后端对话框、新手教程扫描卡：同一套 ○ 确认 / × 取消 */
+:root[data-theme="sao"] #kbackend .kb-box { border-radius: 4px; }
+:root[data-theme="sao"] :is(#kbackend .btns button, .scan .sc-act button):not([hidden]) { border-radius: 99px; display: inline-flex; align-items: center; gap: 6px; background: #fff; color: var(--text); box-shadow: 0 0 0 1px var(--line-strong); }
+:root[data-theme="sao"] :is(#kbackend .btns .primary, .scan .sc-act .sc-go)::before { content: ""; width: 11px; height: 11px; border: 2.5px solid var(--confirm); border-radius: 50%; }
+:root[data-theme="sao"] :is(#kbackend .kb-deny, .scan .sc-skip)::before { content: "×"; font-size: 18px; line-height: 1; font-weight: 700; color: var(--err); }
+:root[data-theme="sao"] .scan .sc-chips button { border-radius: 99px; }
+/* 「给你看」卡、扫描卡：像右栏一样的白色半透明面板 */
+:root[data-theme="sao"] :is(.tell, .scan) { border-radius: 3px; border-color: rgba(255, 255, 255, .95); box-shadow: var(--shadow-sm); }
 
 /* ---------- 设置页（settings.html） ---------- */
 :root[data-theme="sao"] nav { background: var(--side); }
